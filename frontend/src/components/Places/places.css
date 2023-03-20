@@ -1,0 +1,11 @@
+.flights-param-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.location-list{
+    width: 30%;
+    margin: 1vh !important;
+}

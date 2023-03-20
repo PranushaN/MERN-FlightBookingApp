@@ -1,0 +1,36 @@
+
+.container-categories{
+    background-color: rgb(249, 227, 139);
+    position: relative;
+    top: -20vh;
+    border-width: 2px;
+    border-color: #4a4a4a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    padding: 0 3vh;
+    z-index: 1;
+}
+
+.Tab-Categories{
+    color: black;
+    font-weight: 500;
+}
+
+.Categories-Board{
+    background-color: white;
+    color: black;
+    position: fixed;
+    border-radius: 3vh;
+    /* top: -25vh; */
+    width: 170vh;
+    padding: 5vh 0;
+}
+
+.search-btn{
+    border-radius: 6vh !important;
+    width: 30vh;
+    font-weight: bold !important;
+}

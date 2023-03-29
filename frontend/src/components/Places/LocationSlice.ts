@@ -24,7 +24,7 @@ const initialState: initialStateType = {
 export const fetchPlaces = createAsyncThunk('places/getAllPlaces', () => {
     return axios.get('http://localhost:5001/api/places')
     .then(response => {
-        console.log('slice fetch: ', response)
+        //console.log('slice fetch: ', response)
         return response.data
     })
 })

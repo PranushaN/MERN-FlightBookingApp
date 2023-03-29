@@ -1,9 +1,11 @@
 import { FlightTakeoffSharp } from '@mui/icons-material'
-import { Autocomplete, Box, Stack, TextField } from '@mui/material'
+import { Autocomplete, Box, Button, Stack, TextField } from '@mui/material'
 import { useState, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { fetchPlaces, locationObjType } from './LocationSlice';
+import { SearchParamType , searchActions} from './SearchParamsSlice';
 import './places.css';
+import { useNavigate } from "react-router-dom";
 
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -19,8 +21,19 @@ const Locations = () => {
 
     const dispatch = useAppDispatch();
     const Locations = useAppSelector((state) => state.places);
-    console.log('locations: ', Locations);
-    console.log('Selected location: ', location);
+    const navigate = useNavigate();
+
+    const flightsPage = () => {
+        const searchPayload: SearchParamType = {
+            source: location !== null ? location.short : '',
+            destination: destination !== null ? destination.short : '',
+            startDate: null,
+            endDate: null
+        };
+        console.log('Dispatch for search: ', searchPayload);
+        dispatch(searchActions.search(searchPayload));
+        navigate("/flights");
+    }
 
     useEffect(() => {
         dispatch(fetchPlaces())
@@ -96,6 +109,10 @@ const Locations = () => {
                     </LocalizationProvider>
                 </Box>
             ) : null}
+
+            <Button variant="contained" size="medium" color="primary" className="search-btn" onClick={flightsPage} >
+                Search
+            </Button>
         </Stack>
     )
 }

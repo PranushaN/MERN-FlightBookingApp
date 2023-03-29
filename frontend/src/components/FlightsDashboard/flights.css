@@ -1,0 +1,57 @@
+.flight-dashboard {
+    background-color: #78b6d7;
+}
+
+.flight-container {
+    background-color: white;
+    margin: 10px;
+    padding: 0.5em;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #abcdef;
+}
+
+.content {
+    position: fixed;
+    top: 100px;
+    bottom: 1px;
+    left: 0;
+    right: 0;
+    background-color: #F63;
+    overflow: auto;
+}
+
+.flight-detail{
+    vertical-align: middle;
+}
+
+.flight-upper{
+    margin-bottom: 0 !important;
+}
+
+hr{
+    border: 2px solid rgb(81, 226, 194);
+    width: 30%;
+    margin: 0;
+}
+
+.bold-value {
+    font-weight: bold !important;
+}
+
+.filter-dashboard{
+    padding: 1em;
+}
+
+.airline-List .airline {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}

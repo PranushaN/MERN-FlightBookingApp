@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import './home.css';
 import Location from '../Places/Locations';
+import { useNavigate } from "react-router-dom";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -14,7 +15,7 @@ interface Categoryprops {
 
 function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
-
+    
     return (
         <div
             role="tabpanel"
@@ -33,6 +34,7 @@ function TabPanel(props: TabPanelProps) {
 }
 
 export const Categories = (props: Categoryprops) => {
+  
     return (
         <Box className="Categories-Board" >
             <TabPanel value={props.tab} index={0}>
@@ -59,9 +61,7 @@ export const Categories = (props: Categoryprops) => {
             <TabPanel value={props.tab} index={7}>
                 Activities
             </TabPanel>
-            <Button variant="contained" size="medium" color="primary" className="search-btn" >
-                Search
-            </Button>
         </Box>
     )
 }
+//<a href={`/contacts/1`}>Your Name</a>
